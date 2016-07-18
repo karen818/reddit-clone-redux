@@ -52,22 +52,22 @@
           <div class="form-group" ng-class="{'has-error': checkForError(postForm.postTitle), 'has-success': postForm.postTitle.$valid }">
             <label for="postTitle" ng-class="{'text-danger': checkForError(postForm.postTitle), 'text-success': postForm.postTitle.$valid }">Title</label>
             <input type="text" class="form-control" name="postTitle" placeholder="This is about..." ng-model="newPost.postTitle" required>
-            <p ng-show="checkForError(postForm.postTitle)" class="help-block">Hey! Where's your post title?</p>
+            <p ng-show="checkForError(postForm.postTitle)" class="help-block">Your post needs a title</p>
           </div>
           <div class="form-group" ng-class="{'has-error': checkForError(postForm.author), 'has-success': postForm.author.$valid }">
             <label for="author" ng-class="{'text-danger': checkForError(postForm.author), 'text-success': postForm.author.$valid }">Author</label>
             <input type="text" class="form-control" name="author" placeholder="I am..." ng-model="newPost.author" required>
-            <p ng-show="checkForError(postForm.author)" class="help-block">Hey! Who are you?</p>
+            <p ng-show="checkForError(postForm.author)" class="help-block">Your post needs an author</p>
           </div>
           <div class="form-group" ng-class="{'has-error': checkForError(postForm.postUrl), 'has-success': postForm.postUrl.$valid }">
             <label for="postUrl" ng-class="{'text-danger': checkForError(postForm.postUrl), 'text-success': postForm.postUrl.$valid }">Image URL</label>
             <input type="text" class="form-control" name="postUrl" placeholder="Here's a picture..." ng-model="newPost.postUrl" required>
-            <p ng-show="checkForError(postForm.postUrl)" class="help-block">Hey! Where's your postUrl?</p>
+            <p ng-show="checkForError(postForm.postUrl)" class="help-block">Your post needs a picture</p>
           </div>
           <div class="form-group" ng-class="{'has-error': checkForError(postForm.postTxt), 'has-success': postForm.postTxt.$valid }">
             <label for="postTxt" ng-class="{'text-danger': checkForError(postForm.postTxt), 'text-success': postForm.postTxt.$valid }">Post</label>
             <input type="text" class="form-control" name="postTxt" placeholder="I have to say..." ng-model="newPost.postTxt" required>
-            <p ng-show="checkForError(postForm.postTxt)" class="help-block">Hey! What are your deepest thoughts?</p>
+            <p ng-show="checkForError(postForm.postTxt)" class="help-block">Your post needs a post</p>
           </div>
           <input type="submit" class="btn btn-info" value="Add Post" ng-click="show=!show">
         </form>
