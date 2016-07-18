@@ -20,9 +20,12 @@
             post.date = moment().format('dddd, MMMM Do, YYYY');
             $scope.view.posts.push(post);
             $scope.newPost = {};
+            $scope.show=!$scope.show;
             // $scope.postForm.$setUntouched();
             console.log($scope.view.posts);
         }
+
+
 
     }); //end PostController
 

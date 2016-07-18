@@ -49,23 +49,23 @@
       <div class="col-sm-12 col-md-8 col-lg-8">
 
         <form name="postForm" ng-submit="addPost(newPost)" ng-show="show" class="newForm">
-          <div class="form-group" ng-class="{'has-error': checkForError(postForm.postTitle), 'has-success': postForm.postTitle.$valid }">
-            <label for="postTitle" ng-class="{'text-danger': checkForError(postForm.postTitle), 'text-success': postForm.postTitle.$valid }">Title</label>
+          <div class="form-group">
+            <label for="postTitle" ng-class="{'text-danger': postForm.postTitle.$invalid && postForm.postTitle.$touched, 'text-success': postForm.postTitle.$valid }">Title</label>
             <input type="text" class="form-control" name="postTitle" placeholder="This is about..." ng-model="newPost.postTitle" required>
           </div>
-          <div class="form-group" ng-class="{'has-error': checkForError(postForm.author), 'has-success': postForm.author.$valid }">
-            <label for="author" ng-class="{'text-danger': checkForError(postForm.author), 'text-success': postForm.author.$valid }">Author</label>
+          <div class="form-group">
+            <label for="author" ng-class="{'text-danger': postForm.author.$invalid && postForm.author.$touched, 'text-success': postForm.author.$valid }">Author</label>
             <input type="text" class="form-control" name="author" placeholder="I am..." ng-model="newPost.author" required>
           </div>
-          <div class="form-group" ng-class="{'has-error': checkForError(postForm.postUrl), 'has-success': postForm.postUrl.$valid }">
-            <label for="postUrl" ng-class="{'text-danger': checkForError(postForm.postUrl), 'text-success': postForm.postUrl.$valid }">Image URL</label>
+          <div class="form-group">
+            <label for="postUrl" ng-class="{'text-danger': postForm.postUrl.$invalid && postForm.postUrl.$touched, 'text-success': postForm.postUrl.$valid }">Image URL</label>
             <input type="text" class="form-control" name="postUrl" placeholder="Here's a picture..." ng-model="newPost.postUrl" required>
           </div>
-          <div class="form-group" ng-class="{'has-error': checkForError(postForm.postTxt), 'has-success': postForm.postTxt.$valid }">
-            <label for="postTxt" ng-class="{'text-danger': checkForError(postForm.postTxt), 'text-success': postForm.postTxt.$valid }">Post</label>
+          <div class="form-group">
+            <label for="postTxt" ng-class="{'text-danger': postForm.postTxt.$invalid && postForm.postTxt.$touched, 'text-success': postForm.postTxt.$valid }">Post</label>
             <input type="text" class="form-control" name="postTxt" placeholder="I have to say..." ng-model="newPost.postTxt" required>
           </div>
-          <input type="submit" class="btn btn-info" value="Add Post" ng-click="show=!show">
+          <input type="submit" class="btn btn-info" value="Add Post">
         </form>
       </div>
     </div>
