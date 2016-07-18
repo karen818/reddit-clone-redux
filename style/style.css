@@ -43,12 +43,17 @@ input.ng-touched.ng-valid {
   border-radius: 5px;
 }
 
-.glyphicon-upload:hover {
-  color: green;
+.form-control {
+  margin-right: 50px;
 }
 
-.glyphicon-download:hover {
-  color: red;
+
+.glyphicon-upload {
+  color: #16a085;
+}
+
+.glyphicon-download {
+  color: #c0392b;
 }
 
 .logo {
