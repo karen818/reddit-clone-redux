@@ -51,6 +51,23 @@
            ],
            upvote: 2,
            downvote: 0
+       },
+         {
+           postTitle: "Please don't eat me, Mr. Shark",
+           author: "A cute baby seal",
+           postUrl: "http://static1.businessinsider.com/image/56cdeac86e97c625048b95af/17-of-the-most-jaw-dropping-images-in-the-running-for-the-worlds-largest-photography-contest.jpg",
+           postTxt: "I want to lllliiiiivvvvveeee!",
+           date: moment().subtract(4, 'days').calendar(),
+           showCommentForm: false,
+           comments: [
+               {
+                   author: "Mr. Shark",
+                   commentTxt: "I just want to give you a kiss...with my teeth. MUHAHAHAHAHAHA!",
+                   date: moment().subtract(1, 'day').calendar()
+               }
+           ],
+           upvote: 0,
+           downvote: 10
          }
          ];
 
