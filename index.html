@@ -35,10 +35,10 @@
       </button>
       <label for="sort">Sort by: </label>
       <select class="sortBy form-control browser-default" name="sort" ng-model="sortBy">
-        <option name="byDate">Date</option>
-        <option name="byUpvote">Upvotes</option>
-        <option name="byDownvote">Downvotes</option>
-        <option name="byTitle">Title</option>
+        <option value="-date" ng-selected="true">Date</option>
+        <option value="-upvote">Upvotes</option>
+        <option value="-downvote">Downvotes</option>
+        <option value="postTitle">Title</option>
       </select>
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search for..." ng-model="view.search">

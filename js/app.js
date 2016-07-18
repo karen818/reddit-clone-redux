@@ -56,8 +56,8 @@
 
         $scope.addPost = function(newPost){
             $scope.newPost = {};
-            console.log(newPost);
             newPost.date = moment().format('dddd, MMMM DD, YYYY');
+            newPost.comments = [];
             newPost.upvote = 0;
             newPost.downvote = 0;
             newPost.showCommentForm = false;
@@ -68,7 +68,6 @@
 
         $scope.addComment = function(post){
             var newComment = {};
-            console.log("clicked");
 
             newComment.date = moment().format('dddd, MMMM DD, YYYY');
             newComment.author = $scope.newComment.author;
