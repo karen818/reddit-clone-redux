@@ -40,7 +40,7 @@
            comments: [
                {
                    author: "Moxxi",
-                   commentTxt: "you are a derp",
+                   commentTxt: "No, *you* are a derp",
                    date: moment().subtract(1, 'day').calendar()
                },
                {
