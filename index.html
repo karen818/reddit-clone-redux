@@ -77,13 +77,17 @@
         <a href="#">
           <img class="media-object" ng-src="{{post.postUrl}}" alt="post postUrl">
         </a>
-        <small>Posted: {{post.date}}</small>
+        <span class="glyphicon glyphicon-calendar"></span><small> {{post.date}}</small>
       </div>
       <div class="media-body">
-        <a href="#" class="pull-right">by {{post.author}}</a>
+        <p class="pull-right">by {{post.author}}</p>
         <h4 class="media-heading">{{post.postTitle}}</h4>
-
         <p>{{post.postTxt}}</p>
+
+        <a href="#" ng-click"viewComments(post)" ng-model="showComments"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>    Comments</a>
+
+        <a href="#" ng-click"addComment(post)">&nbsp;&nbsp;<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>    Add Comment</a>
+
       </div>
     </div>
   </div>
