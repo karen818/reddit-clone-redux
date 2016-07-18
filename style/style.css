@@ -1,0 +1,28 @@
+h4 {
+  font-weight: bold;
+}
+
+input.ng-touched.ng-invalid {
+   border-color: red;
+}
+
+input.ng-touched.ng-invalid {
+  background-color: #FA787E;
+}
+
+input.ng-touched.ng-valid {
+  background-color: #fff;
+}
+
+button {
+  margin-right: 20px;
+}
+
+.media-object {
+  width: 200px;
+  height: auto;
+}
+
+.well {
+  border-radius: 5px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="redditApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reddit Clone Redux</title>
+  <!-- angular script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <!-- angular animate script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+  <!-- momentjs script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <!-- my script -->
+  <script src="js/moment.js" charset="utf-8"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+
+  <!-- font awesome css -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="style/bootstrapTheme.css">
+
+  <!-- my css -->
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body ng-controller="PostController">
+  <nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <form class="navbar-form navbar-left" role="search">
+      <button type="button" class="btn btn-info" aria-label="Left Align" ng-click="show=!show">
+        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>   New Post
+      </button>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search for..." ng-model="view.search">
+      </div>
+    </form>
+  </div>
+</nav>
+<div class="container">
+  <img src="img/logo.png" alt="logo" />
+
+  </div>
+
+  <div class="container" ng-show="show">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-8">
+
+        <form name="postForm" ng-submit="addPost(newPost)" ng-show="show" class="newForm">
+          <div class="form-group" ng-class="{'has-error': checkForError(postForm.postTitle), 'has-success': postForm.postTitle.$valid }">
+            <label for="postTitle" ng-class="{'text-danger': checkForError(postForm.postTitle), 'text-success': postForm.postTitle.$valid }">Title</label>
+            <input type="text" class="form-control" name="postTitle" placeholder="This is about..." ng-model="newPost.postTitle" required>
+            <p ng-show="checkForError(postForm.postTitle)" class="help-block">Hey! Where's your post title?</p>
+          </div>
+          <div class="form-group" ng-class="{'has-error': checkForError(postForm.author), 'has-success': postForm.author.$valid }">
+            <label for="author" ng-class="{'text-danger': checkForError(postForm.author), 'text-success': postForm.author.$valid }">Author</label>
+            <input type="text" class="form-control" name="author" placeholder="I am..." ng-model="newPost.author" required>
+            <p ng-show="checkForError(postForm.author)" class="help-block">Hey! Who are you?</p>
+          </div>
+          <div class="form-group" ng-class="{'has-error': checkForError(postForm.postUrl), 'has-success': postForm.postUrl.$valid }">
+            <label for="postUrl" ng-class="{'text-danger': checkForError(postForm.postUrl), 'text-success': postForm.postUrl.$valid }">Image URL</label>
+            <input type="text" class="form-control" name="postUrl" placeholder="Here's a picture..." ng-model="newPost.postUrl" required>
+            <p ng-show="checkForError(postForm.postUrl)" class="help-block">Hey! Where's your postUrl?</p>
+          </div>
+          <div class="form-group" ng-class="{'has-error': checkForError(postForm.postTxt), 'has-success': postForm.postTxt.$valid }">
+            <label for="postTxt" ng-class="{'text-danger': checkForError(postForm.postTxt), 'text-success': postForm.postTxt.$valid }">Post</label>
+            <input type="text" class="form-control" name="postTxt" placeholder="I have to say..." ng-model="newPost.postTxt" required>
+            <p ng-show="checkForError(postForm.postTxt)" class="help-block">Hey! What are your deepest thoughts?</p>
+          </div>
+          <input type="submit" class="btn btn-info" value="Add Post" ng-click="show=!show">
+        </form>
+      </div>
+    </div>
+  </div>
+<div class="container">
+  <div class="row well" ng-repeat="post in view.posts | filter:view.search">
+    <div class="media" >
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" ng-src="{{post.postUrl}}" alt="post postUrl">
+        </a>
+        <small>Posted: {{post.date}}</small>
+      </div>
+      <div class="media-body">
+        <a href="#" class="pull-right">by {{post.author}}</a>
+        <h4 class="media-heading">{{post.postTitle}}</h4>
+
+        <p>{{post.postTxt}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
