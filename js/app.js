@@ -76,7 +76,7 @@
 
         $scope.viewComments = function(post) {
             console.log('viewComments');
-            $scope.showComments=!$scope.showComments;
+            post.showComments=!post.showComments;
         }
 
         $scope.upvotePost = function(post) {

@@ -35,7 +35,7 @@
       </button>
 
       <div class="dropdown form-group">
-        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Sort posts by
           <span class="caret"></span>
         </button>
@@ -111,7 +111,7 @@
 
 
 
-        <p ng-repeat="comment in post.comments" ng-show="showComments" class="comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  <strong>{{comment.author}}</strong> wrote "{{comment.commentTxt}}"  <small>({{comment.date}})</small></p>
+        <p ng-repeat="comment in post.comments" ng-show="post.showComments" class="comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  <strong>{{comment.author}}</strong> wrote "{{comment.commentTxt}}"  <small>({{comment.date}})</small></p>
 
         <form name="commentForm" ng-submit="addComment(post)" ng-show="showCommentForm">
           <div class="form-group">
